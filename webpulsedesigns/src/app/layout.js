@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/app/components/Navbar/Navbar';
 
@@ -12,6 +12,13 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
+const inter = Inter({
+  variable: '--font-inter',
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+});
 export const metadata = {
   title: 'Webpulse Designs',
   description:
@@ -20,7 +27,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.className}`}>
       <body className="bg-gradient-to-l from-gray-950 via-gray-900 to-black">
         <Navbar />
         {children}
