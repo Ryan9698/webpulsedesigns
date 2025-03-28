@@ -22,6 +22,48 @@ export default function Navbar() {
         <ul className="flex space-x-12">
           {navLinks.map(({ href, label }) => {
             const isActive = pathname === href;
+
+            if (label === 'Services') {
+              return (
+                <li key={href} className="relative group p-2">
+                  <span
+                    className={`${baseStyles} ${
+                      isActive ? activeStyles : ''
+                    } cursor-pointer`}
+                  >
+                    {label}
+                  </span>
+                  {/* Dropdown */}
+                  <div className="absolute left-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform -translate-y-2 transition duration-300 z-50">
+                    <Link
+                      href="/services/branding"
+                      className="block px-4 py-2 text-white hover:bg-gray-700"
+                    >
+                      Branding
+                    </Link>
+                    <Link
+                      href="/services/seo"
+                      className="block px-4 py-2 text-white hover:bg-gray-700"
+                    >
+                      SEO & Performance
+                    </Link>
+                    <Link
+                      href="/services/ads"
+                      className="block px-4 py-2 text-white hover:bg-gray-700"
+                    >
+                      Ad Management
+                    </Link>
+                    <Link
+                      href="/services/webdesign"
+                      className="block px-4 py-2 text-white hover:bg-gray-700"
+                    >
+                      Web Design
+                    </Link>
+                  </div>
+                </li>
+              );
+            }
+
             return (
               <li key={href} className="text-xl p-2">
                 <Link

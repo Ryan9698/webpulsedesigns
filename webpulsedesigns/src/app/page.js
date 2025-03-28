@@ -2,7 +2,10 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <section className="w-full max-w-7xl mx-auto py-24 px-6 flex flex-col-reverse lg:flex-row items-center gap-12">
+    // Background Image
+    <section className="relative w-full h-screen  mx-auto py-24 px-20 flex flex-col-reverse lg:flex-row items-center gap-12">
+      <div className="absolute inset-0 -z-10 bg-[url('/webpulse1440.webp')] bg-cover bg-center opacity-60" />
+
       {/* LEFT TEXT SIDE */}
       <div className="w-full lg:w-1/2 text-center lg:text-left">
         <h2 className="text-4xl sm:text-5xl font-jakarta text-white font-bold leading-tight">
