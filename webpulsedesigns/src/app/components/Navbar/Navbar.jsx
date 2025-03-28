@@ -13,13 +13,13 @@ export default function Navbar() {
     { href: '/about', label: 'Contact' },
   ];
   const baseStyles =
-    'transition transform hover:text-white hover:scale-105 font-dmSans justify-around';
+    'transition transform hover:text-white hover:scale-105 font-jakartaSans text-lg';
   const activeStyles = 'text-blue-600 ';
   return (
     <>
       <div className=" text-3xl font-bold text-white">Webpulse</div>
       <nav className="w-full bg-gray-900/70 text-gray-300 flex items-center justify-center backdrop-blur-md shadow-lg border-b border-white/10">
-        <ul className="flex">
+        <ul className="flex space-x-12">
           {navLinks.map(({ href, label }) => {
             const isActive = pathname === href;
             return (
