@@ -26,4 +26,8 @@
   .font-dmSans {
     font-family: var(--font-dm-sans), sans-serif;
   }
+
+  .font-jakartaSans {
+    font-family: var(--font-jakarta-sans), sans-serif;
+  }
 }

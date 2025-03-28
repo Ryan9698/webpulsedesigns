@@ -2,25 +2,46 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div>
-      <Image
-        src="https://dummyimage.com/300.png/09f/fff"
-        alt="Picture of the author"
-        width={600}
-        height={400}
-      />
-      <h1 className="text-3xl font-bold underline text-white font-inter">
-        Custom Designs
-      </h1>
-      <h2 className="text-3xl font-bold underline text-white font-geist">
-        SEO and Web Services
-      </h2>
-      <h3 className="text-3xl font-bold underline text-white font-geistMono">
-        Customer Service
-      </h3>
-      <h4 className="text-3xl font-bold underline text-white font-dmSans">
-        DM Sans font sample text
-      </h4>
-    </div>
+    <section className="w-full max-w-7xl mx-auto py-24 px-6 flex flex-col-reverse lg:flex-row items-center gap-12">
+      {/* LEFT TEXT SIDE */}
+      <div className="w-full lg:w-1/2 text-center lg:text-left">
+        <h2 className="text-4xl sm:text-5xl font-jakarta text-white font-bold leading-tight">
+          Elevate Your Brand with <br />
+          <span className="underline decoration-pink-500/60 underline-offset-[6px]">
+            Custom Web Design
+          </span>
+        </h2>
+        <p className="mt-6 text-white/80 text-lg">
+          We design experiences that convert — blending performance, SEO, and
+          aesthetics into every pixel.
+        </p>
+
+        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <button className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-lg font-medium transition">
+            View Portfolio
+          </button>
+          <button className="border border-white/30 hover:border-pink-400 text-white px-6 py-3 rounded-lg font-medium transition">
+            Let’s Talk
+          </button>
+        </div>
+      </div>
+
+      {/* RIGHT IMAGE SIDE */}
+      <div className="w-full lg:w-1/2 flex justify-center">
+        <div className="relative">
+          <Image
+            src="https://placehold.co/600x400.png"
+            alt="Device or design preview"
+            width={600}
+            height={400}
+            className="rounded-xl shadow-xl"
+          />
+          {/* Optional Floating Label */}
+          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-sm text-white/60 font-geist">
+            Built with Next.js & Tailwind
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
