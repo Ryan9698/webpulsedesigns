@@ -20,7 +20,7 @@ export default function Logo() {
         fontSize="20"
         textAnchor="middle"
         fill="currentColor"
-        className="text-white font-jakartaSans animate-pulse"
+        className="text-white font-jakartaSans animate-pulse tracking-wide"
       >
         Webpulse
       </text>

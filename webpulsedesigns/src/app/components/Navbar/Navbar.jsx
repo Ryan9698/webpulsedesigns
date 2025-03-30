@@ -57,7 +57,7 @@ export default function Navbar() {
                   </button>
 
                   {/* Dropdown with proper alignment and z-index */}
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 z-50 rounded-lg bg-gray-900/70 py-2 shadow-lg opacity-0 translate-y-1 pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-0 transition duration-200 w-48 border border-white/10 backdrop-blur-md">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 z-50 rounded-lg bg-gray-900/70 py-2 shadow-[0_8px_16px_rgba(255,255,255,0.05)] opacity-0 translate-y-1 pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-0 transition duration-200 w-48 border border-white/10 backdrop-blur-md">
                     {dropdown.map((item) => (
                       <Link
                         key={item.href}
