@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+
 export default function Navbar() {
   const pathname = usePathname();
 
@@ -27,14 +29,23 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="relative h-auto w-40">
+      <motion.div
+        initial={{ opacity: 0.5 }}
+        animate={{
+          opacity: 1,
+          rotate: [45, 0, -45, 0],
+          scale: [1, 0.5, 1],
+        }}
+        transition={{ duration: 2 }}
+        className="relative h-auto w-40 p-2"
+      >
         <Image
           src="/images/webpulselogo.webp"
           width={160}
           height={80}
           className="w-full h-1/2 object-contain"
         ></Image>
-      </div>
+      </motion.div>
       <nav className="relative w-full bg-gray-900/70 text-gray-300 flex items-center justify-center backdrop-blur-md shadow-lg border-b border-white/10 z-40">
         <ul className="flex space-x-12 items-center">
           {navLinks.map(({ href, label, dropdown }) => {
