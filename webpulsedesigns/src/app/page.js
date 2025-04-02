@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function Home() {
   return (
     // Background Image
-    <section className="relative w-full h-screen  mx-auto py-24 px-20 flex flex-col-reverse lg:flex-row items-center gap-12">
+    <section className="relative max-w-[80%] h-screen  mx-auto py-24 px-20 flex flex-col-reverse lg:flex-row items-center gap-12">
       <div className="absolute inset-0 -z-10 brightness-100 bg-[url('/webpulse1440.webp')] bg-cover bg-center opacity-60" />
 
       {/* LEFT TEXT SIDE */}
@@ -33,7 +33,7 @@ export default function Home() {
       <div className="w-full lg:w-1/2 flex justify-center">
         <div className="relative">
           <Image
-            src="https://placehold.co/600x400.png"
+            src="/images/webpulselogo.webp"
             alt="Device or design preview"
             width={600}
             height={400}

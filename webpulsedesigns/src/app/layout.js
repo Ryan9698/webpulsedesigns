@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
       className={`${inter.variable} ${geistSans.variable} ${geistMono.variable} ${dmSans.variable} ${jakartaSans.variable}`}
     >
       <body className="bg-gradient-to-l from-gray-950 via-gray-900 to-black">
-        <Logo />
+        {/* <Logo /> */}
         <Navbar />
         {children}
       </body>
