@@ -33,7 +33,7 @@ export default function Navbar() {
         initial={{ opacity: 0.5 }}
         animate={{
           opacity: 1,
-          rotate: [45, 0, -45, 0],
+          rotate: [45, -45, 0],
           scale: [1, 0.5, 1],
         }}
         transition={{ duration: 2 }}
