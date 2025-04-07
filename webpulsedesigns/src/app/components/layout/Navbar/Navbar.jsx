@@ -1,12 +1,23 @@
 'use client';
-
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 export default function Navbar() {
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
   const pathname = usePathname();
+
+  useEffect(() => {
+    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+  }, []);
+
+  useEffect(() => {
+    setDropdownOpen(false);
+  }, [pathname]);
 
   const navLinks = [
     { href: '/', label: 'Home' },
@@ -56,9 +67,15 @@ export default function Navbar() {
                 <li key={label} className="group relative p-2">
                   <button
                     type="button"
+                    aria-label="Services Menu"
+                    aria-haspopup="true"
+                    aria-expanded="false"
                     className={`inline-flex items-center p-2 ${baseStyles} ${
                       isActive ? activeStyles : ''
                     }`}
+                    onClick={() =>
+                      isTouchDevice && setDropdownOpen(!dropdownOpen)
+                    }
                   >
                     {label}
                     <svg
@@ -76,7 +93,16 @@ export default function Navbar() {
                   </button>
 
                   {/* Dropdown with proper alignment and z-index */}
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 z-50 rounded-lg bg-gray-900 py-2 shadow-[0_8px_16px_rgba(255,255,255,0.05)] opacity-0 translate-y-1 pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-0 transition duration-200 w-48 border border-white/10 backdrop-blur-md">
+                  <div
+                    className={`absolute top-full left-1/2 -translate-x-1/2 z-50 rounded-lg bg-gray-900 py-2 shadow-[0_8px_16px_rgba(255,255,255,0.05)] w-48 border border-white/10 backdrop-blur-md transition duration-200 ${
+                      isTouchDevice
+                        ? dropdownOpen
+                          ? 'opacity-100 translate-y-0 pointer-events-auto'
+                          : 'opacity-0 -translate-y-1 pointer-events-none'
+                        : 'group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto opacity-0 -translate-y-1 pointer-events-none'
+                    }`}
+                  >
+                    {' '}
                     {dropdown.map((item) => (
                       <Link
                         key={item.href}
@@ -99,7 +125,21 @@ export default function Navbar() {
                     isActive ? activeStyles : ''
                   }`}
                 >
-                  {label}
+                  <span className="relative z-10"> {label}</span>
+                  {isActive && (
+                    <motion.div
+                      layoutId="nav-underline"
+                      className="absolute left-0 bottom-1 w-full h-[1px] bg-blue-500 rounded"
+                      transition={{
+                        type: 'spring',
+                        stiffness: 500,
+                        damping: 50,
+                      }}
+                      animate={{
+                        backgroundColor: isActive ? '#3b82f6' : '#aaa',
+                      }}
+                    ></motion.div>
+                  )}
                 </Link>
               </li>
             );
