@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import TestBox from '../components/TestBox/TestBox';
+import TestBox from '../components/home/TestBox/TestBox';
 
 function MyBox(props) {
   console.log('Props object:', props);

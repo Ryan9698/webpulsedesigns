@@ -6,8 +6,8 @@ import {
   jakartaSans,
 } from './utils/fontImports';
 import './globals.css';
-import Navbar from '@/app/components/Navbar/Navbar';
-import Logo from '@/app/components/Logo/Logo';
+import { Navbar } from '@/app/components/layout';
+import Logo from '@/app/components/home/Logo/Logo';
 
 export const metadata = {
   title: 'Webpulse Designs',

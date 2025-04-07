@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Logo, TextBox } from '@/app/components/home';
 
 export default function Home() {
   return (
@@ -27,6 +28,12 @@ export default function Home() {
             <button className="border border-white/30 hover:border-pink-400 text-white px-6 py-3 rounded-lg font-medium transition">
               Let’s Talk
             </button>
+            <Logo />
+            <Logo />
+            <Logo />
+            <TextBox />
+            <TextBox />
+            <TextBox />
           </div>
         </div>
 
