@@ -31,7 +31,7 @@ export default function Navbar() {
       ],
     },
     { href: '/portfolio', label: 'Portfolio' },
-    { href: '/about', label: 'Contact' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   const baseStyles =
