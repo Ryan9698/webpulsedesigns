@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Logo, TextBox } from '@/app/components/home';
+import { Logo, TextBox, Accordion } from '@/app/components/home';
 
 export default function Home() {
   return (
@@ -34,6 +34,7 @@ export default function Home() {
             <TextBox />
             <TextBox />
             <TextBox />
+            <Accordion />
           </div>
         </div>
 
