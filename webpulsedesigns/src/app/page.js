@@ -1,19 +1,30 @@
 import Image from 'next/image';
 import { Logo, TextBox, Accordion } from '@/app/components/home';
+import { HoverWords } from '@/app/components/general';
 
 export default function Home() {
   return (
     // Background Image
     <div className="bg-[url('/images/webpulse1440.webp')] bg-cover bg-center">
-      <section className="relative max-w-[80%] h-screen  mx-auto py-8 px-20 flex flex-col-reverse lg:flex-row items-center gap-12">
+      <section className="relative md:max-w-[80%] min-h-screen  mx-auto py-8 px-20 flex flex-col-reverse lg:flex-row items-center gap-12">
         <div className="absolute inset-0 -z-10 brightness-100 bg-[url('/webpulse1440.webp')] bg-cover bg-center opacity-60" />
 
         {/* LEFT TEXT SIDE */}
-        <div className="w-full lg:w-1/2 text-center lg:text-left">
-          <h2 className="text-3xl sm:text-5xl font-jakarta text-white font-bold leading-tight">
-            Elevate Your Brand with <br />
-            <span className="underline decoration-pink-500/60 underline-offset-[6px]">
-              Custom Web Design
+        <div className="w-full lg:w-1/2 text-center lg:text-left space-y-12">
+          <h2 className="text-3xl sm:text-5xl font-jakarta text-white font-bold leading-normal align-middle">
+            <span className="block relative overflow-visible">
+              <HoverWords
+                className="inline-block text-white filter drop-shadow-[0_0_12px_rgba(0,191,255,0.6)]"
+                initial={{ y: 40, opacity: 0 }}
+                animate={{ y: [40, 0, -6, 0], opacity: 1 }}
+                transition={{ duration: 1.4, ease: 'easeOut' }}
+              >
+                Elevate
+              </HoverWords>{' '}
+              Your Brand with <br />
+              <span className="underline decoration-pink-500/60 underline-offset-[6px]">
+                Custom Web Design
+              </span>
             </span>
           </h2>
           <p className="mt-6 text-white/80 text-lg">
@@ -28,13 +39,6 @@ export default function Home() {
             <button className="border border-white/30 hover:border-pink-400 text-white px-6 py-3 rounded-lg font-medium transition">
               Let’s Talk
             </button>
-            <Logo />
-            <Logo />
-            <Logo />
-            <TextBox />
-            <TextBox />
-            <TextBox />
-            <Accordion />
           </div>
         </div>
 
@@ -46,7 +50,7 @@ export default function Home() {
               alt="Device or design preview"
               width={600}
               height={400}
-              className="rounded-xl shadow-xl"
+              className="backdrop-blur-sm bg-gradient-to-br from-transparent via-black/10 to-transparent pointer-events-none"
             />
             {/* Optional Floating Label */}
             <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-sm text-white/60 font-geist">
@@ -55,7 +59,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full py-20 px-6 max-w-7xl mx-auto">
+      <section className="w-full py-20 px-6 sm:w-full mx-auto bg-black/30 rounded-xl">
         <h2 className="text-4xl font-jakartaSans text-white font-semibold text-center mb-12">
           Unique <span className="text-sky-400">Styles</span>.{' '}
           <span className="">
@@ -67,7 +71,15 @@ export default function Home() {
           </span>
           .
         </h2>
+        <p className="text-white sm:w-full sm:text-center sm:text-xl sm:mx-20">
+          Explore your creativity to craft a unique experience for your
+          visitors. Our websites are designed using React and JavaScript,
+          allowing you to design a site exactly how you picture it in your mind.
+          No Wordpress or templates, allowing you total control. The only limits
+          are your imagination.
+        </p>
       </section>
+      <TextBox />
     </div>
   );
 }
