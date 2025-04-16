@@ -6,7 +6,7 @@ export default function Home() {
   return (
     // Background Image
     <div className="bg-[url('/images/webpulse1440.webp')] bg-cover bg-center">
-      <section className="relative md:max-w-[80%] min-h-screen  mx-auto py-8 px-20 flex flex-col-reverse lg:flex-row items-center gap-12">
+      <section className="relative md:max-w-[80%] min-h-screen  mx-auto py-8 px-20 flex flex-col-reverse lg:flex-row items-center gap-6">
         <div className="absolute inset-0 -z-10 brightness-100 bg-[url('/webpulse1440.webp')] bg-cover bg-center opacity-60" />
 
         {/* LEFT TEXT SIDE */}
@@ -59,7 +59,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full py-20 px-6 sm:w-full mx-auto bg-black/30 rounded-xl">
+      <section className="w-full px-20 py-10 sm:w-full mx-auto bg-black/30 rounded-xl">
         <h2 className="text-4xl font-jakartaSans text-white font-semibold text-center mb-12">
           Unique <span className="text-sky-400">Styles</span>.{' '}
           <span className="">
@@ -71,8 +71,8 @@ export default function Home() {
           </span>
           .
         </h2>
-        <p className="text-white sm:w-full sm:text-center sm:text-xl sm:mx-20">
-          Explore your creativity to craft a unique experience for your
+        <p className="text-white sm:w-full sm:text-center sm:text-xl mx-auto">
+          Explore your creativity and craft a unique experience for your
           visitors. Our websites are designed using React and JavaScript,
           allowing you to design a site exactly how you picture it in your mind.
           No Wordpress or templates, allowing you total control. The only limits

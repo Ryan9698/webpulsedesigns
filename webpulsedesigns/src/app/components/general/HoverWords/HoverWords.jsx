@@ -8,8 +8,8 @@ export default function HoverWords({
   initial = { y: 20, opacity: 0 },
   animate = { y: 0, opacity: 1 },
   transition = {
-    delay: 0.25,
-    duration: 1.5,
+    delay: 0.1,
+    duration: 1.0,
     times: [0, 0.25, 0.5, 0.75, 1],
     ease: 'easeOut',
   },
