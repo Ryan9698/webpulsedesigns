@@ -1,14 +1,21 @@
 import Image from 'next/image';
-import { Logo, TextBox, Accordion } from '@/app/components/home';
-import { HoverWords } from '@/app/components/general';
+import { Logo, TextBox, Accordion } from '@/components/home';
+import { HoverWords } from '@/components/general';
+import { SlideIn } from '@/components/general';
+
+console.log('🧪 SlideIn is:', SlideIn);
+
+if (typeof SlideIn !== 'function') {
+  throw new Error('❌ SlideIn is undefined or not a function');
+}
 
 export default function Home() {
   return (
     // Background Image
+
     <div className="bg-[url('/images/webpulse1440.webp')] bg-cover bg-center">
       <section className="relative md:max-w-[80%] min-h-screen  mx-auto py-8 px-20 flex flex-col-reverse lg:flex-row items-center gap-6">
         <div className="absolute inset-0 -z-10 brightness-100 bg-[url('/webpulse1440.webp')] bg-cover bg-center opacity-60" />
-
         {/* LEFT TEXT SIDE */}
         <div className="w-full lg:w-1/2 text-center lg:text-left space-y-12">
           <h2 className="text-3xl sm:text-5xl font-jakarta text-white font-bold leading-normal align-middle">
@@ -60,23 +67,24 @@ export default function Home() {
         </div>
       </section>
       <section className="w-full px-20 py-10 sm:w-full mx-auto bg-black/30 rounded-xl">
-        <h2 className="text-4xl font-jakartaSans text-white font-semibold text-center mb-12">
-          Unique <span className="text-sky-400">Styles</span>.{' '}
-          <span className="">
-            Built for Your{' '}
-            <span className="relative text-sky-400 transform animate-pulse duration-900">
-              Brand
-              <div className="absolute rounded-full shadow shadow-sky-200  left-1/2 top-full -mt-2 -translate-x-1/2  w-20 h-4 blur"></div>
+        <SlideIn direction="left" includeExit exitDirection="right">
+          <h2 className="text-4xl font-jakartaSans text-white font-semibold text-center mb-12">
+            Unique <span className="text-sky-400">Styles</span>.{' '}
+            <span className="">
+              Built for Your{' '}
+              <span className="relative text-sky-400 transform animate-pulse duration-900">
+                Brand
+                <div className="absolute rounded-full shadow shadow-sky-200  left-1/2 top-full -mt-2 -translate-x-1/2  w-20 h-4 blur"></div>
+              </span>
             </span>
-          </span>
-          .
-        </h2>
+            .
+          </h2>
+        </SlideIn>
         <p className="text-white sm:w-full sm:text-center sm:text-xl mx-auto">
           Explore your creativity and craft a unique experience for your
           visitors. Our websites are designed using React and JavaScript,
           allowing you to design a site exactly how you picture it in your mind.
-          No Wordpress or templates, allowing you total control. The only limits
-          are your imagination.
+          No Wordpress or templates, allowing you total control.
         </p>
       </section>
       <TextBox />

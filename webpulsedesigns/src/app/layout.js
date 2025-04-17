@@ -4,10 +4,10 @@ import {
   geistMono,
   dmSans,
   jakartaSans,
-} from './utils/fontImports';
+} from '@/utils/fontImports';
 import './globals.css';
-import { Navbar } from '@/app/components/layout';
-import Logo from '@/app/components/home/Logo/Logo';
+import { Navbar } from '@/components/layout';
+import Logo from '@/components/home/Logo';
 
 export const metadata = {
   title: 'Webpulse Designs',
