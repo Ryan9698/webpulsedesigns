@@ -2,12 +2,7 @@ import Image from 'next/image';
 import { Logo, TextBox, Accordion } from '@/components/home';
 import { HoverWords } from '@/components/general';
 import { SlideIn } from '@/components/general';
-
-console.log('🧪 SlideIn is:', SlideIn);
-
-if (typeof SlideIn !== 'function') {
-  throw new Error('❌ SlideIn is undefined or not a function');
-}
+import { AnimatePresence } from 'framer-motion';
 
 export default function Home() {
   return (
@@ -51,35 +46,38 @@ export default function Home() {
 
         {/* RIGHT IMAGE SIDE */}
         <div className="w-full lg:w-1/2 flex justify-center">
-          <div className="relative">
-            <Image
-              src="/images/webpulselogo.webp"
-              alt="Device or design preview"
-              width={600}
-              height={400}
-              className="backdrop-blur-sm bg-gradient-to-br from-transparent via-black/10 to-transparent pointer-events-none"
-            />
-            {/* Optional Floating Label */}
-            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-sm text-white/60 font-geist">
-              Built with Next.js & Tailwind
-            </div>
-          </div>
+          <AnimatePresence>
+            <SlideIn direction="right" includeExit exitDirection="left">
+              <div className="relative">
+                <Image
+                  src="/images/webpulselogo.webp"
+                  alt="Device or design preview"
+                  width={600}
+                  height={400}
+                  className="backdrop-blur-sm bg-gradient-to-br from-transparent via-black/10 to-transparent pointer-events-none"
+                />
+                {/* Optional Floating Label */}
+                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-sm text-white/60 font-geist">
+                  Built with Next.js & Tailwind
+                </div>
+              </div>
+            </SlideIn>
+          </AnimatePresence>
         </div>
       </section>
       <section className="w-full px-20 py-10 sm:w-full mx-auto bg-black/30 rounded-xl">
-        <SlideIn direction="left" includeExit exitDirection="right">
-          <h2 className="text-4xl font-jakartaSans text-white font-semibold text-center mb-12">
+        <h2 className="text-4xl font-jakartaSans text-white font-semibold text-center mb-12 flex flex-wrap justify-center gap-2">
+          <SlideIn direction="left" as="span">
             Unique <span className="text-sky-400">Styles</span>.{' '}
-            <span className="">
-              Built for Your{' '}
-              <span className="relative text-sky-400 transform animate-pulse duration-900">
-                Brand
-                <div className="absolute rounded-full shadow shadow-sky-200  left-1/2 top-full -mt-2 -translate-x-1/2  w-20 h-4 blur"></div>
-              </span>
+          </SlideIn>
+          <SlideIn direction="right" delay={1.5} as="span">
+            Built for Your{' '}
+            <span className="relative text-sky-400 transform animate-pulse duration-900">
+              Brand
+              <div className="absolute rounded-full shadow shadow-sky-200  left-1/2 top-full -mt-2 -translate-x-1/2  w-20 h-4 blur"></div>
             </span>
-            .
-          </h2>
-        </SlideIn>
+          </SlideIn>
+        </h2>
         <p className="text-white sm:w-full sm:text-center sm:text-xl mx-auto">
           Explore your creativity and craft a unique experience for your
           visitors. Our websites are designed using React and JavaScript,

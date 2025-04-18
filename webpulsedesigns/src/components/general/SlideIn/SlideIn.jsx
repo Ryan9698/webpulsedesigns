@@ -17,6 +17,8 @@ const directions = {
 
 export default function SlideIn({
   children,
+  // Prop allowing the dynamic creation of motion elements such as motion.div or motion.span
+  as = 'div',
   direction = 'left',
   className = '',
   initial: initialOverride,
@@ -24,8 +26,14 @@ export default function SlideIn({
   exit: exitOverride,
   exitDirection,
   includeExit = false,
-  transition = { delay: 0.5, duration: 1.25, ease: 'easeOut' },
+  delay,
+  transition,
 }) {
+  // Motion tag will take over for the hard-coded element with the 'as' prop allowing dynamic generation of the element.
+  // <SlideIn as='span' /> >> motion['span'] >> motion.span
+  // Evaluates and returns the new element or if it does not exist, will default to a motion.div
+
+  const MotionTag = motion[as] || motion.div;
   // base variable to check if a direction exists and insert the appropriate values, if not, default to {x: -50, opacity: 0} (left)
   const base = directions[direction] || directions.left;
 
@@ -67,18 +75,26 @@ export default function SlideIn({
     opacity: 1,
   };
 
+  const finalTransition = {
+    delay: 0.5,
+    duration: 1.25,
+    ease: 'easeOut',
+    ...transition,
+    ...(delay != undefined && { delay }),
+  };
+
   // The final return span will create a sliding effect with the props given from direction but allows customization if necessary. Using children allowing manipulation of entire pieces or elements depending on need.
   // Use: <SlideIn direction='up' /> Content </SlideIn> or <SlideIn initial={y:-10, opacity: 0} animate={...} />
 
   return (
-    <motion.div
+    <MotionTag
       className={className}
       initial={initial}
       animate={animate}
-      transition={transition}
+      transition={finalTransition}
       exit={exit}
     >
       {children}
-    </motion.div>
+    </MotionTag>
   );
 }
