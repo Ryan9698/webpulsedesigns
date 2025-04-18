@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Logo, TextBox, Accordion } from '@/components/home';
+// import { Logo, TextBox, Accordion } from '@/components/home';
 import { HoverWords } from '@/components/general';
 import { SlideIn } from '@/components/general';
 import { AnimatePresence } from 'framer-motion';
@@ -85,7 +85,7 @@ export default function Home() {
           No Wordpress or templates, allowing you total control.
         </p>
       </section>
-      <TextBox />
+      {/* <TextBox /> */}
     </div>
   );
 }

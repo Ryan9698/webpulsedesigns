@@ -147,9 +147,7 @@ export default function Navbar() {
           })}
         </ul>
       </nav>
-      <div className="sm:hidden w-full bg-gray-900/70 text-gray-300 flex items-center my-auto backdrop-blur-md shadow-lg border-b border-white/10 z-40">
-        <MobileNav />
-      </div>
+      <MobileNav />
     </>
   );
 }
