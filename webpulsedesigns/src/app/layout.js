@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${inter.variable} ${geistSans.variable} ${geistMono.variable} ${dmSans.variable} ${jakartaSans.variable}`}
     >
-      <body className="">
+      <body className="overflow-x-hidden">
         {/* <Logo /> */}
         <Navbar />
         {children}
