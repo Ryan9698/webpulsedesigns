@@ -10,10 +10,7 @@ export default function Home() {
     // Background Image
     <div className="[&_*]:outline [&_*]:outline-1 [&_*]:outline-red-500">
       <div className="bg-[url('/images/webpulse1440.webp')] bg-cover bg-center">
-        <section
-          className="relative w-full md:max-w-[80%] min-h-screen  mx-auto py-8 px-4 sm:px-8 md:px-12 lg:px-20
- flex flex-col-reverse lg:flex-row items-center gap-6"
-        >
+        <section className="relative w-full max-w-screen-xl min-h-screen mx-auto py-8 px-4 sm:px-8 md:px-12 lg:px-20 flex flex-col-reverse lg:flex-row items-center gap-6">
           <div className="absolute inset-0 -z-10 brightness-100 bg-[url('/webpulse1440.webp')] bg-cover bg-center opacity-60" />
           {/* LEFT TEXT SIDE */}
           <div className="w-full lg:w-1/2 text-center lg:text-left space-y-12">
@@ -70,7 +67,7 @@ export default function Home() {
             </AnimatePresence>
           </div>
         </section>
-        <section className="w-full px-4 sm:px-8 md:px-12 lg:px-20 py-10 mx-auto bg-black/30 rounded-xl">
+        <section className="w-full max-w-screen-xl px-4 sm:px-8 md:px-12 lg:px-20 py-10 mx-auto bg-black/30 rounded-xl">
           <h2 className="text-4xl font-jakartaSans text-white font-semibold text-center mb-12 flex flex-wrap justify-center gap-2">
             <SlideIn direction="left" as="span">
               Unique <span className="text-sky-400">Styles</span>.{' '}
