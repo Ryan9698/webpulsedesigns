@@ -1,14 +1,20 @@
 @import 'tailwindcss';
 
-/* @theme inline {
-    extend: {
-        fontFamily: {
-          inter: ['var(--font-inter)', 'sans-serif'],
-          geist: ['var(--font-geist-sans)', 'sans-serif'],
-          geistMono: ['var(--font-geist-mono)', 'monospace'],
-        },
-      },
-} */
+@theme {
+  --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      opacity: 0.25;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.45;
+      transform: scale(1.05);
+    }
+  }
+}
 
 @layer utilities {
   .font-geist {

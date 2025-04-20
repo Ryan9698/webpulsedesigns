@@ -12,8 +12,6 @@ export default function Home() {
       <section className="relative md:max-w-[80%] min-h-screen  mx-auto py-8 px-20 flex flex-col-reverse lg:flex-row items-center gap-6">
         <div className="absolute inset-0 -z-10 brightness-100 bg-[url('/webpulse1440.webp')] bg-cover bg-center opacity-60" />
         {/* LEFT TEXT SIDE */}
-        <p className="text-red-500 text-3xl">🚨 THIS SHOULD BE VISIBLE</p>
-        <p className="text-red-500 text-3xl">🚨 THIS SHOULD BE VISIBLE</p>
         <div className="w-full lg:w-1/2 text-center lg:text-left space-y-12">
           <h2 className="text-3xl sm:text-5xl font-jakarta text-white font-bold leading-normal align-middle">
             <span className="block relative overflow-visible">

@@ -38,7 +38,15 @@ export default function ContactForm({ status, setStatus }) {
 
   const inputVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    visible: (i = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 1.8 + i * 0.15, // staggered entry after header completes
+        duration: 0.5,
+        ease: 'easeOut',
+      },
+    }),
   };
 
   return (
@@ -72,6 +80,7 @@ export default function ContactForm({ status, setStatus }) {
 
       {/* Name */}
       <motion.input
+        custom={0}
         variants={inputVariants}
         initial="hidden"
         animate="visible"
@@ -86,6 +95,7 @@ export default function ContactForm({ status, setStatus }) {
 
       {/* Email */}
       <motion.input
+        custom={1}
         variants={inputVariants}
         initial="hidden"
         animate="visible"
@@ -100,6 +110,7 @@ export default function ContactForm({ status, setStatus }) {
 
       {/* Message */}
       <motion.textarea
+        custom={2}
         variants={inputVariants}
         initial="hidden"
         animate="visible"
@@ -112,7 +123,9 @@ export default function ContactForm({ status, setStatus }) {
         className="w-full px-4 pt-4 pb-10 rounded-lg bg-gray-900/30 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-pink-500 resize-none"
       />
 
+      {/* Button */}
       <motion.button
+        custom={3}
         variants={inputVariants}
         initial="hidden"
         animate="visible"
