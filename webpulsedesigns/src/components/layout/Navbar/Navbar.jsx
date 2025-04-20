@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import MobileNav from './MobileNav';
+import DebugViewport from '@/components/viewport/DebugViewport';
 
 export default function Navbar() {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
@@ -58,7 +59,8 @@ export default function Navbar() {
           className="w-full h-1/2 object-contain"
         ></Image>
       </motion.div>
-      <nav className="relative w-full bg-gray-900/70 text-gray-300 flex items-center justify-center backdrop-blur-md shadow-lg border-b border-white/10 z-40">
+      <nav className="relative w-full max-w-screen-xl px-4 bg-gray-900/70 text-gray-300 flex items-center justify-center backdrop-blur-md shadow-lg border-b border-white/10 z-40">
+        <DebugViewport />
         <ul className="hidden sm:flex space-x-12 items-center">
           {navLinks.map(({ href, label, dropdown }) => {
             const isActive = pathname === href;
