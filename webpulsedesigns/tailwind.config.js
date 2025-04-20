@@ -12,6 +12,15 @@ module.exports = {
         geist: ['var(--font-geist-sans)', 'sans-serif'],
         geistMono: ['var(--font-geist-mono)', 'monospace'],
       },
+      keyframes: {
+        'pulse-bg': {
+          '0%, 100%': { opacity: '0.2' },
+          '50%': { opacity: '0.35' },
+        },
+      },
+      animation: {
+        'pulse-bg': 'pulse-bg 6s ease-in-out infinite',
+      },
     },
   },
   plugins: [],
