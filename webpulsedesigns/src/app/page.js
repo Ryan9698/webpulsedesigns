@@ -8,7 +8,7 @@ import DebugViewport from '@/components/viewport/DebugViewport';
 export default function Home() {
   return (
     // Background Image
-    <div className="[&_*]:outline [&_*]:outline-1 [&_*]:outline-red-500">
+    <div className="">
       <div className="bg-[url('/images/webpulse1440.webp')] bg-cover bg-center">
         <section className="relative w-full max-w-screen-xl min-h-screen mx-auto py-8 px-4 sm:px-8 md:px-12 lg:px-20 flex flex-col-reverse lg:flex-row items-center gap-6">
           <div className="absolute inset-0 -z-10 brightness-100 bg-[url('/webpulse1440.webp')] bg-cover bg-center opacity-60" />
