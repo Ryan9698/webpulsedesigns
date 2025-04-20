@@ -3,17 +3,22 @@ import Image from 'next/image';
 import { HoverWords } from '@/components/general';
 import { SlideIn } from '@/components/general';
 import { AnimatePresence } from 'framer-motion';
+import DebugViewport from '@/components/viewport/DebugViewport';
 
 export default function Home() {
   return (
     // Background Image
 
     <div className="bg-[url('/images/webpulse1440.webp')] bg-cover bg-center">
-      <section className="relative md:max-w-[80%] min-h-screen  mx-auto py-8 px-20 flex flex-col-reverse lg:flex-row items-center gap-6">
+      <section
+        className="relative w-full md:max-w-[80%] min-h-screen  mx-auto py-8 px-4 sm:px-8 md:px-12 lg:px-20
+ flex flex-col-reverse lg:flex-row items-center gap-6"
+      >
         <div className="absolute inset-0 -z-10 brightness-100 bg-[url('/webpulse1440.webp')] bg-cover bg-center opacity-60" />
         {/* LEFT TEXT SIDE */}
         <div className="w-full lg:w-1/2 text-center lg:text-left space-y-12">
           <h2 className="text-3xl sm:text-5xl font-jakarta text-white font-bold leading-normal align-middle">
+            <DebugViewport />
             <span className="block relative overflow-visible">
               <HoverWords
                 className="inline-block text-white filter drop-shadow-[0_0_12px_rgba(0,191,255,0.6)]"
