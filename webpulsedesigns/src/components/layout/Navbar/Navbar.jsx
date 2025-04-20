@@ -59,9 +59,9 @@ export default function Navbar() {
           className="w-full h-1/2 object-contain"
         ></Image>
       </motion.div>
-      <nav className="relative w-screen  px-4 bg-gray-900/70 text-gray-300 flex items-center justify-center backdrop-blur-md shadow-lg border-b border-white/10 z-40">
+      <nav className="hidden md:flex relative w-full px-4 bg-gray-900/70 text-gray-300  items-center justify-center backdrop-blur-md shadow-lg border-b border-white/10 z-40">
         <DebugViewport />
-        <ul className="hidden sm:flex flex-wrap w-full justify-center space-x-8 items-center">
+        <ul className="flex flex-wrap w-full justify-center space-x-8 items-center">
           {navLinks.map(({ href, label, dropdown }) => {
             const isActive = pathname === href;
 
