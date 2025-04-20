@@ -70,7 +70,7 @@ export default function Home() {
           </AnimatePresence>
         </div>
       </section>
-      <section className="w-full px-20 py-10 sm:w-full mx-auto bg-black/30 rounded-xl">
+      <section className="w-full px-4 sm:px-8 md:px-12 lg:px-20 py-10 mx-auto bg-black/30 rounded-xl">
         <h2 className="text-4xl font-jakartaSans text-white font-semibold text-center mb-12 flex flex-wrap justify-center gap-2">
           <SlideIn direction="left" as="span">
             Unique <span className="text-sky-400">Styles</span>.{' '}
