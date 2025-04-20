@@ -30,8 +30,10 @@ export default function RootLayout({ children }) {
     >
       <body className="overflow-x-hidden">
         {/* <Logo /> */}
-        <Navbar />
-        {children}
+        <div className="[&_*]:outline [&_*]:outline-1 [&_*]:outline-pink-500">
+          <Navbar />
+          {children}
+        </div>
       </body>
     </html>
   );
