@@ -9,10 +9,10 @@ const navLinks = [
   {
     label: 'Services',
     subLinks: [
-      { label: 'Branding', href: '/services/branding' },
-      { label: 'SEO', href: '/services/seo' },
-      { label: 'Ads', href: '/services/ads' },
-      { label: 'Web Design', href: '/services/webdesign' },
+      { label: 'Branding', href: '/solutions/branding' },
+      { label: 'SEO', href: '/solutions/seo' },
+      { label: 'Ads', href: '/solutions/ads' },
+      { label: 'Web Design', href: '/solutions/webdesign' },
     ],
   },
   { label: 'Portfolio', href: '/portfolio' },
