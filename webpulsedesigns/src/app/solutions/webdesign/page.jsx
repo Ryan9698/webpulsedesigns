@@ -1,10 +1,14 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { SlideIn, Highlight } from '@/components/general';
 import { AnimatedChecklist } from '@/components/general';
 import { FactCarousel } from '@/components/general';
 import { webDesignFeatures, webDesignFacts } from '@/app/data';
+
+const cardStyles =
+  'rounded-xl p-6 shadow-[0_0_12px_rgba(0,191,255,0.15)] border border-white/10 bg-gradient-to-br from-black/30 via-slate-900 to-black/10';
 
 export default function DesignShowcase() {
   return (
@@ -30,14 +34,19 @@ export default function DesignShowcase() {
             delay={0.3}
             className="text-white/80 text-lg max-w-xl font-geist"
           >
-            Your website isn't just an online presence — it's your brand’s first
-            impression and lasting signature. At Webpulse, we craft tailored
-            designs that emphasize clarity, reflect your unique identity, and
-            encourage user interaction. Whether you need a sophisticated
-            multi-page website or an elegant single-page design, we deliver
-            solutions optimized for performance, accessibility, and search
-            engines (SEO). Stand out, connect with your audience, and showcase
-            what makes you unforgettable.
+            Your website isn't just an online presence — it's your brand’s{' '}
+            <Highlight variant="blue">first impression</Highlight> and{' '}
+            <Highlight variant="blue">lasting signature.</Highlight> At
+            Webpulse, we craft tailored designs that emphasize clarity, reflect
+            your unique identity, and encourage user interaction. Whether you
+            need a sophisticated multi-page website or an elegant single-page
+            design, we deliver solutions optimized for performance,
+            accessibility, and{' '}
+            <Link href="/solutions/seo" className="underline font-sky-400">
+              search engines (SEO).
+            </Link>{' '}
+            Stand out, connect with your audience, and showcase what makes you
+            unforgettable.
           </SlideIn>
 
           <AnimatedChecklist items={webDesignFeatures} />
