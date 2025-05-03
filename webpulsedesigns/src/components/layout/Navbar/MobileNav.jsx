@@ -4,6 +4,31 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+// EXERCISES (NOT PART OF SITE CODE) /////////////////
+
+// const recipes = [
+//   { name: 'Spaghetti Carbonara', cuisine: 'Italian', difficulty: 'easy' },
+//   { name: 'Margherita Pizza', cuisine: 'Italian', difficulty: 'medium' },
+//   { name: 'Kung Pao Chicken', cuisine: 'Chinese', difficulty: 'hard' },
+//   { name: 'Sweet and Sour Pork', cuisine: 'Chinese', difficulty: 'medium' },
+//   { name: 'Croissant', cuisine: 'French', difficulty: 'hard' },
+//   { name: 'Ratatouille', cuisine: 'French', difficulty: 'easy' },
+// ];
+
+function categorizeWordsWithCount(arr) {
+  return arr.reduce((acc, item) => {
+    const word = item[0];
+    acc[word] = acc[word] || { count: 0, words: [] };
+    acc[word].count++;
+    acc[word].words.push(item);
+    console.log(acc);
+    return acc;
+  }, {});
+}
+
+categorizeWordsWithCount(['apricot', 'apple', 'bread', 'celery', 'date']);
+/////////////////////////////////////////////////////
+
 const navLinks = [
   { label: 'Home', href: '/' },
   {
