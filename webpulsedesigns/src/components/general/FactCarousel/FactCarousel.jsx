@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function FactCarousel({ data = [] }) {
+export default function FactCarousel({ data = [], className = '' }) {
   const [index, setIndex] = useState(0);
 
   const next = () => setIndex((prev) => (prev + 1) % data.length);
@@ -20,19 +20,22 @@ export default function FactCarousel({ data = [] }) {
   const current = data[index];
 
   return (
-    <div className="relative w-full max-w-2xl mx-auto h-44 md:h-36 bg-gradient-to-br from-white/10 via-white/5 to-white/0 p-6 rounded-xl border border-white/10 shadow-[0_0_12px_rgba(0,191,255,0.1)] backdrop-blur-lg text-white space-y-4 transition-all">
+    <div
+      className={`relative w-full max-w-md md:max-w-xl overflow-hidden box-border h-44 md:h-36 bg-gradient-to-br from-black/30 via-slate-900 to-black/10 p-6 rounded-xl border border-white/10 shadow-[0_0_12px_rgba(0,191,255,0.1)] backdrop-blur-lg text-white space-y-4 transition-all ${className}`}
+    >
       <AnimatePresence mode="wait">
         <motion.div
+          layout="position"
           key={current.title}
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -20 }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="text-md text-sky-400 mb-2 mx-4 font-jakartaSans">
+          <h3 className="text-md text-sky-400 mb-2 mx-4 font-jakartaSans whitespace-pre-wrap break-words">
             {current.title}
           </h3>
-          <p className="text-white/90 font-geist text-sm mb-3 mx-4">
+          <p className="text-white/90 font-geist text-sm mb-3 mx-4 whitespace-pre-wrap break-words">
             {current.description}
           </p>
           <div className="text-end mx-6">

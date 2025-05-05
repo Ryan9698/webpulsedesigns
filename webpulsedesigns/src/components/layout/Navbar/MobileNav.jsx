@@ -4,40 +4,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-// EXERCISES (NOT PART OF SITE CODE) /////////////////
-
-// const recipes = [
-//   { name: 'Spaghetti Carbonara', cuisine: 'Italian', difficulty: 'easy' },
-//   { name: 'Margherita Pizza', cuisine: 'Italian', difficulty: 'medium' },
-//   { name: 'Kung Pao Chicken', cuisine: 'Chinese', difficulty: 'hard' },
-//   { name: 'Sweet and Sour Pork', cuisine: 'Chinese', difficulty: 'medium' },
-//   { name: 'Croissant', cuisine: 'French', difficulty: 'hard' },
-//   { name: 'Ratatouille', cuisine: 'French', difficulty: 'easy' },
-// ];
-
-function categorizeWordsWithCount(arr) {
-  return arr.reduce((acc, item) => {
-    const word = item[0];
-    acc[word] = acc[word] || { count: 0, words: [] };
-    acc[word].count++;
-    acc[word].words.push(item);
-    console.log(acc);
-    return acc;
-  }, {});
-}
-
-categorizeWordsWithCount(['apricot', 'apple', 'bread', 'celery', 'date']);
-/////////////////////////////////////////////////////
-
 const navLinks = [
   { label: 'Home', href: '/' },
   {
     label: 'Services',
     subLinks: [
-      { label: 'Branding', href: '/solutions/branding' },
-      { label: 'SEO', href: '/solutions/seo' },
-      { label: 'Ads', href: '/solutions/ads' },
+      // { label: 'Branding', href: '/solutions/branding' },
       { label: 'Web Design', href: '/solutions/webdesign' },
+      { label: 'SEO', href: '/solutions/seo' },
+      // { label: 'Ads', href: '/solutions/ads' },
     ],
   },
   { label: 'Portfolio', href: '/portfolio' },
@@ -88,7 +63,7 @@ export default function MobileNav() {
       {/* Hamburger */}
       <button
         onClick={toggleMenu}
-        className="fixed top-4 right-4 z-[100] text-white font-jakartaSans bg-gradient-to-br from-gray-900/20 via-gray-800/30 to-black/30 border border-white/10 px-4 py-2 rounded shadow-lg"
+        className="md:hidden fixed top-4 right-4 z-[100] text-white font-jakartaSans bg-gradient-to-br from-gray-900/20 via-gray-800/30 to-black/30 border border-white/10 px-4 py-2 rounded shadow-lg"
       >
         {isOpen ? '✖ Close' : '☰ Menu'}
       </button>
@@ -160,7 +135,7 @@ export default function MobileNav() {
                                 animate={{ opacity: 1, height: 'auto' }}
                                 exit={{ opacity: 0, height: 0 }}
                                 transition={{ duration: 0.3 }}
-                                className="ml-4 mt-4 space-y-2 text-base text-gray-300"
+                                className="ml-4 mt-4 space-y-2 text-xl text-gray-300"
                               >
                                 {item.subLinks.map((sub) => (
                                   <Link
