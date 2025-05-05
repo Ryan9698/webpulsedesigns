@@ -29,13 +29,11 @@ export default function AnimatedChecklist({ items = [], className = '' }) {
           <motion.li
             key={item}
             custom={i}
-            initial="hidden"
-            animate="visible"
             variants={itemVariants}
             className={`flex gap-3 items-start text-white text-sm md:text-md mx-4 md:mx-0 mr-10 md:mr-0 ${className}`}
           >
             <FiCheckCircle className="text-sky-400 text-cl mt-1 shrink-0" />
-            <span>{item}</span>
+            <span className="inline-block text-left w-full">{item}</span>
           </motion.li>
         );
       })}

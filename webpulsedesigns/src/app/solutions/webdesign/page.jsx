@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { SlideIn, Highlight } from '@/components/general';
 import { AnimatedChecklist } from '@/components/general';
@@ -75,7 +76,7 @@ export default function DesignShowcase() {
             accessibility, and{' '}
             <Link
               href="/solutions/seo"
-              className="underline decoration-pink-400 decoration-2 underline-offset-3 font-sky-400"
+              className="underline decoration-pink-500 decoration-2 underline-offset-3 text-pink-500"
             >
               search engines (SEO).
             </Link>{' '}
@@ -97,16 +98,29 @@ export default function DesignShowcase() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true }}
-            className="w-full max-w-md md:max-w-xl mx-auto bg-gradient-to-br from-black/30 via-slate-900 to-black/10 border border-white/10 rounded-xl p-6 shadow-[0_0_12px_rgba(0,191,255,0.15)] m-4 "
+            className="w-full max-w-md md:max-w-xl mx-auto bg-gradient-to-br from-black/30 via-slate-900 to-black/10 border border-white/10 rounded-xl p-6 shadow-[0_0_12px_rgba(0,191,255,0.15)] m-4"
           >
             <h3 className="text-2xl font-semibold mb-4">
               Recent Project Highlight
             </h3>
-            <div className="aspect-video w-full bg-gray-800 rounded-md mb-3" />
-            <p className="text-white/70 text-sm">
-              Reimagined a local brand's site from the ground up, resulting in a
-              63% increase in engagement and a 40% faster loading time. All
-              built with React, Tailwind, and love.
+            {/* Recent Project Image and Link */}
+            <Link
+              href="https://speechavenues.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/images/satclogo.webp"
+                width={600}
+                height={375}
+                alt="Speech Avenues Therapy Co. Logo showcasing brand identity in recent redesign project"
+                className="w-full h-auto object-contain rounded-lg"
+              />
+            </Link>
+            <p className="text-white/70 text-sm mt-4 leading-relaxed tracking-tight">
+              Speech Avenues Therapy Co. is a local non-profit business based in
+              Rockledge, FL. Redesigned their website from the ground up,
+              improving the aesthetics, accessibility, performance, and SEO.
             </p>
           </motion.div>
 

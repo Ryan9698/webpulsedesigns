@@ -26,10 +26,10 @@ export default function Navbar() {
     {
       label: 'Services',
       dropdown: [
-        { href: '/solutions/branding', label: 'Branding' },
-        { href: '/solutions/seo', label: 'SEO & Performance' },
-        { href: '/solutions/ads', label: 'Ad Management' },
         { href: '/solutions/webdesign', label: 'Web Design' },
+        { href: '/solutions/seo', label: 'SEO & Performance' },
+        // { href: '/solutions/branding', label: 'Branding' },
+        // { href: '/solutions/ads', label: 'Ad Management' },
       ],
     },
     { href: '/portfolio', label: 'Portfolio' },
