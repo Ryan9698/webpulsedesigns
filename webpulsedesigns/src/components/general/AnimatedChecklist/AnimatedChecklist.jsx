@@ -9,9 +9,9 @@ const itemVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 1.2 + i * 1.0,
+      delay: 0.4 + i * 0.15,
       duration: 0.5,
-      ease: 'easeIn',
+      ease: 'easeOut',
     },
   }),
 };

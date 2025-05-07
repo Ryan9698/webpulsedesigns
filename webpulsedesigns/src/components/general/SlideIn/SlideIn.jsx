@@ -28,6 +28,7 @@ export default function SlideIn({
   includeExit = false,
   delay,
   transition,
+  triggerOnView = false,
 }) {
   // Motion tag will take over for the hard-coded element with the 'as' prop allowing dynamic generation of the element.
   // <SlideIn as='span' /> >> motion['span'] >> motion.span
@@ -90,9 +91,11 @@ export default function SlideIn({
     <MotionTag
       className={className}
       initial={initial}
-      animate={animate}
+      animate={triggerOnView ? undefined : animate}
+      whileInView={triggerOnView ? animate : undefined}
       transition={finalTransition}
       exit={exit}
+      viewport={triggerOnView ? { once: true, amount: 0.3 } : undefined}
     >
       {children}
     </MotionTag>
