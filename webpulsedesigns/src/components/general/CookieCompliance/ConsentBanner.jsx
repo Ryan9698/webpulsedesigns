@@ -41,8 +41,10 @@ gtag('config', 'G-CKQNBHX0CX', { anonymize_ip: true });
   return (
     <AnimatePresence>
       {visible && (
-        <SlideInFooter className="will-change-transform transition-transform duration-500">
-          <div className="fixed bottom-0 left-0 right-0 bg-black text-white p-4 flex flex-col sm:flex-row justify-between items-center z-50">
+        <SlideInFooter
+          className={`fixed bottom-0 left-0 right-0 z-[9999] will-change-transform w-full`}
+        >
+          <div className="w-full flex flex-col sm:flex-row justify-between items-center bg-gradient-to-r from-black via-slate-900 to-black backdrop-blur-md text-white p-4">
             <p className="text-sm">
               We use cookies to improve your experience. By continuing, you
               accept our use of analytics.
