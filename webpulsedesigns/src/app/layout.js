@@ -7,7 +7,7 @@ import {
 } from '@/utils/fontImports';
 import './globals.css';
 import { Navbar } from '@/components/layout';
-import Logo from '@/components/home/Logo';
+import { ConsentBanner } from '@/components/general';
 
 export const metadata = {
   title: 'Webpulse Designs',
@@ -33,6 +33,7 @@ export default function RootLayout({ children }) {
 
         <Navbar />
         {children}
+        <ConsentBanner />
       </body>
     </html>
   );
