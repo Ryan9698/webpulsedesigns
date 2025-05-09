@@ -100,7 +100,7 @@ export default function SeoAndPerformance() {
       {/* Checklist */}
       <div className="max-w-screen-xl mx-auto mt-24 px-4">
         <SlideIn as="div" direction="left" triggerOnView>
-          <h2 className="text-3xl font-bold text-blue-300 mb-6">
+          <h2 className="text-4xl font-bold text-blue-300 mb-6 text-center sm:text-left">
             Every SEO Plan Includes:
           </h2>
         </SlideIn>

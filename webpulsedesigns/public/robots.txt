@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.webpulsedesigns.com
+
+# Sitemaps
+Sitemap: https://www.webpulsedesigns.com/sitemap.xml
