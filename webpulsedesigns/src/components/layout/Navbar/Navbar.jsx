@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import MobileNav from './MobileNav';
-import DebugViewport from '@/components/viewport/DebugViewport';
 
 export default function Navbar() {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
@@ -42,25 +41,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* <motion.div
-        initial={{ opacity: 0.5 }}
-        animate={{
-          opacity: 1,
-          rotate: [45, -45, 0],
-          scale: [1, 0.5, 1],
-        }}
-        transition={{ duration: 2 }}
-        className="relative h-auto w-40 p-2"
-      >
-        <Image
-          src="/images/webpulselogo.webp"
-          width={160}
-          height={80}
-          className="w-full h-1/2 object-contain"
-        ></Image>
-      </motion.div> */}
       <nav className="hidden md:flex relative w-full px-4 bg-gradient-to-l from-black via-slate-900 to-black text-gray-300  items-center justify-center backdrop-blur-md shadow-lg border-b border-white/10 z-40">
-        <DebugViewport />
         <ul className="flex flex-wrap w-full justify-center space-x-8 items-center">
           {navLinks.map(({ href, label, dropdown }) => {
             const isActive = pathname === href;
