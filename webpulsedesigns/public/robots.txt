@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.webpulsedesigns.com
+Host: https://webpulsedesigns.com
 
 # Sitemaps
-Sitemap: https://www.webpulsedesigns.com/sitemap.xml
+Sitemap: https://webpulsedesigns.com/sitemap.xml
