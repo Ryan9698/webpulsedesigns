@@ -2,6 +2,7 @@
 module.exports = {
   siteUrl: 'https://www.webpulsedesigns.com',
   generateRobotsTxt: true,
+  outDir: './public',
   sitemapSize: 5000,
   changefreq: 'weekly',
   priority: 0.7,
