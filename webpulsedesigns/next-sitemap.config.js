@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://www.webpulsedesigns.com',
+  siteUrl: 'https://webpulsedesigns.com',
   generateRobotsTxt: true,
   outDir: './public',
   sitemapSize: 5000,
