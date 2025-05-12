@@ -7,6 +7,7 @@ import {
   AnimatedChecklist,
   SlideIn,
   CallToAction,
+  RevealText,
 } from '@/components/general';
 
 export default function SeoAndPerformance() {
@@ -20,7 +21,7 @@ export default function SeoAndPerformance() {
         <div className="space-y-10 text-center md:text-left">
           <SlideIn className="text-cyan-400" as="h1" direction="left">
             <p className="text-4xl md:text-5xl font-bold tracking-wide my-10">
-              Turn Visibility Into Value
+              Turn <RevealText word="Visibility" /> Into Value
             </p>
           </SlideIn>
           <SlideIn as="div" direction="down">
