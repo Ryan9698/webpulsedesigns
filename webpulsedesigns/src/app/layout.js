@@ -7,7 +7,7 @@ import {
 } from '@/utils/fontImports';
 import './globals.css';
 import { Navbar } from '@/components/layout';
-import { ConsentBanner } from '@/components/general';
+// import { ConsentBanner } from '@/components/general';
 
 export const metadata = {
   metadataBase: new URL('https://webpulsedesigns.com'),
@@ -102,9 +102,10 @@ export default function RootLayout({ children }) {
       <body className="overflow-x-hidden">
         {/* <Logo /> */}
 
-        <Navbar />
-        {children}
-        <ConsentBanner />
+        {/* <Navbar /> */}
+        {/* {children} */}
+        <h1>Under maintenance. Please check back soon.</h1>
+        {/* <ConsentBanner /> */}
       </body>
     </html>
   );
