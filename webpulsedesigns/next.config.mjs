@@ -1,3 +1,5 @@
+const isDev = process.env.NODE_ENV !== 'production';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async headers() {
@@ -9,14 +11,15 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: `
               default-src 'self';
-              script-src 'self' https://www.googletagmanager.com 'sha256-OBTN3RiyCV4Bq7dFqZ5a2pAXjnCcCYeTJMO2I/LYKeo=';
+              script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com${
+                isDev ? " 'unsafe-eval'" : ''
+              } 'unsafe-inline';
               style-src 'self' 'unsafe-inline';
-              connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com;
               img-src * data:;
               font-src 'self';
-              frame-ancestors 'self';
+              connect-src *;
               object-src 'none';
-            `.replace(/\n/g, ''), // remove line breaks
+            `.replace(/\n/g, ''),
           },
           {
             key: 'X-Frame-Options',

@@ -7,6 +7,7 @@ export default function ContactForm({ status, setStatus }) {
     name: '',
     email: '',
     message: '',
+    currentWebsite: '',
   });
 
   const handleChange = (e) =>
@@ -19,6 +20,9 @@ export default function ContactForm({ status, setStatus }) {
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify(formData),
       });
 
@@ -121,6 +125,13 @@ export default function ContactForm({ status, setStatus }) {
         required
         rows={5}
         className="w-full px-4 pt-4 pb-10 rounded-lg bg-gray-900/30 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-pink-500 resize-none"
+      />
+      <input
+        type="text"
+        name="currentWebsite"
+        autoComplete="off"
+        className="hidden"
+        tabIndex={-1}
       />
 
       {/* Button */}
